@@ -4,7 +4,7 @@ import Home from './pages/Home'
 import Login from './pages/Login'
 import {ToastContainer} from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
-import Signup from './pages/Signup'
+
 function App() {
   
   return (
