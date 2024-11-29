@@ -27,7 +27,7 @@ const Home = () => {
 
     const fetchNotes = async () => {
         try {
-            const {data} = await axios.get("https://notebackendapp.onrender.com/api/note",{
+            const {data} = await axios.get("https://notebackendapp-1.onrender.com/api/note",{
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem("token")}`
                 }
@@ -51,7 +51,7 @@ const Home = () => {
     const addNote = async (title, description) => {
         try{
             const response = await axios.post(
-                "http://localhost:5000/api/note/add",
+                "https://notebackendapp-1.onrender.com/api/note/add",
                { title, description } ,{
                     headers: {
                     Authorization: `Bearer ${localStorage.getItem("token")}`
@@ -73,7 +73,7 @@ const Home = () => {
     const editNote = async (id, title, description) => {
         try{
             const response = await axios.put(
-                `http://localhost:5000/api/note/${id}`,
+                `https://notebackendapp-1.onrender.com/api/note/${id}`,
                { title, description } ,{
                     headers: {
                     Authorization: `Bearer ${localStorage.getItem("token")}`
@@ -94,7 +94,7 @@ const Home = () => {
     const deleteNote = async (id) => {
         try{
             const response = await axios.delete(
-                `http://localhost:5000/api/note/${id}`,
+                `https://notebackendapp-1.onrender.com/api/note/${id}`,
                {
                     headers: {
                     Authorization: `Bearer ${localStorage.getItem("token")}`
@@ -119,7 +119,7 @@ const Home = () => {
       <Navbar setQuery={setQuery}/>
       <div className='px-8 pt-5 grid grid-cols-1 md: grid-cols-3 gap-6'>
         {filteredNotes.length > 0 ? filteredNotes.map(note => (
-        <CardNote note={note} onEdit={onEdit}  deleteNote={deleteNote}/>
+        <CardNote note={note} onEdit={onEdit} deleteNote={deleteNote}/>
       )):<p>No Notes Found</p>}
       </div>
       

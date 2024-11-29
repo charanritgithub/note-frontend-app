@@ -15,7 +15,7 @@ const Login = () => {
         event.preventDefault()
         try{
             const response = await axios.post(
-                "https://notebackendapp.onrender.com/api/auth/login",
+                "https://notebackendapp-1.onrender.com/api/auth/login",
                { email, password } 
             ) 
             if (response.data.success){
@@ -39,11 +39,11 @@ const Login = () => {
                 <input className='w-full px-3 py-4 border' onChange={(e)=> setEmail(e.target.value)} type="email" placeholder='Enter Your Email'/>
             </div>
             <div>
-                <label className='block text-gray-700' htmlFor="password">Name</label>
+                <label className='block text-gray-700' htmlFor="password">Password</label>
                 <input className='w-full px-3 py-4 border' onChange={(e)=> setPassword(e.target.value)} type="password" placeholder='********'/>
             </div>
             <div>
-                <button type='submit' className='w-full bg-teal-600 text-white py-2'>Signup</button>
+                <button type='submit' className='w-full bg-teal-600 text-white py-2'>Login</button>
                 <p className='text-center'>Don't Have Account? <Link to="/register">Singn Up</Link></p>
             </div>
             

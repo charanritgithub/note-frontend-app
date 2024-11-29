@@ -12,15 +12,15 @@ const ContextProviders = ({children}) => {
       setUser(user)
     }
     const logout = () => {
-      toast.success(`logout from ${user.name} Account`)
-      localStorage.removeItem('token')
+      localStorage.removeItem("token")
       setUser(null)
+      toast.success(`logout from ${user.name} Account`)
     }
 
     useEffect(() => {
       const verifyUser = async () => {
         try {
-            const res = await axios.get('https://notebackendapp.onrender.com/api/auth/verify',{
+            const res = await axios.get('https://notebackendapp-1.onrender.com/api/auth/verify',{
               headers: {
                 Authorization: `Bearer ${localStorage.getItem("token")}`
             }

@@ -12,7 +12,7 @@ const Signup = () => {
         event.preventDefault()
         try{
             const response = await axios.post(
-                "https://notebackendapp.onrender.com/api/auth/register",
+                "https://notebackendapp-1.onrender.com/api/auth/register",
                { name, email, password } 
             ) 
             
@@ -38,7 +38,7 @@ const Signup = () => {
                 <input className='w-full px-3 py-4 border' onChange={(e)=> setEmail(e.target.value)} type="email" placeholder='Enter Your Email'/>
             </div>
             <div>
-                <label className='block text-gray-700' htmlFor="password">Name</label>
+                <label className='block text-gray-700' htmlFor="password">Password</label>
                 <input className='w-full px-3 py-4 border' onChange={(e)=> setPassword(e.target.value)} type="password" placeholder='********'/>
             </div>
             <div>
